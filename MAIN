@@ -1,89 +1,77 @@
-import java.util.ArrayList;
-import java.util.List;
-
-class Player {
-    String name;
-    String[] powers;
-    String[] friends;
-    double netWorth;
-    int age;
-    String height;
-
-    public Player(String name, String[] powers, String[] friends) {
-        this.name = name;
-        this.powers = powers;
-        this.friends = friends;
-        this.netWorth = 100000000000.0;
-        this.age = 20;
-        this.height = "6'4";
-    }
-}
-
-class Country {
-    String name;
-    int population;
-    String resources;
-    String leader;
-
-    public Country(String name, int population, String resources, String leader) {
-        this.name = name;
-        this.population = population;
-        this.resources = resources;
-        this.leader = leader;
-    }
-}
-
-public class BrookstersEmpireGame {
-    List<Player> players = new ArrayList<>();
-    List<Country> countries = new ArrayList<>();
-
-    public void createPlayer(String name, String[] powers, String[] friends) {
-        Player player = new Player(name, powers, friends);
-        players.add(player);
-    }
-
-    public void createCountry(String name, int population, String resources, String leader) {
-        Country country = new Country(name, population, resources, leader);
-        countries.add(country);
-    }
-
-    public void readMinds(Player player, Country targetCountry) {
-        // Simulate reading minds to gain information about the country
-        System.out.println(player.name + " reads the minds of " + targetCountry.leader + " in " + targetCountry.name + ".");
-    }
-
-    public void controlActions(Player player, Country targetCountry) {
-        // Simulate controlling actions of the target country's leader
-        System.out.println(player.name + " controls the actions of " + targetCountry.leader + " in " + targetCountry.name + ".");
-    }
-
-    public static void main(String[] args) {
-        BrookstersEmpireGame game = new BrookstersEmpireGame();
-        game.createPlayer("The Brookster", new String[]{"Mind Reading", "Action Control", "Memory Erasing", "Future Telling"}, new String[]{"Brokster", "Broster", "Breanster", "Brookter"});
-        game.createCountry("USA", 330000000, "Technology", "President");
-        game.createCountry("China", 1400000000, "Manufacturing", "President");
-        // Add more countries as needed
-
-        // Perform actions within the game
-        Player player = game.players.get(0);
-        Country targetCountry = game.countries.get(0);
-        game.readMinds(player, targetCountry);
-        game.controlActions(player, targetCountry);
-    }
-}
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Brookster Chronicles</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Mythical Creature Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        #game-container {
+            width: 80%;
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        p {
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Welcome to The Brookster Chronicles</h1>
-        <!-- Interface elements here -->
+    <div id="game-container">
+        <h1>Mythical Creature Game</h1>
+        <div id="status">
+            <p>Net Worth: $100,000,000,000</p>
+            <p>Age: 20</p>
+            <p>Height: 6'4"</p>
+            <p>Location: Small town in Oregon, USA</p>
+        </div>
+        <h2>Friends:</h2>
+        <ul>
+            <li>The Brokster</li>
+            <li>Broster</li>
+            <li>Breanster</li>
+            <li>Brookter</li>
+        </ul>
+        <h2>Superpowers:</h2>
+        <ul>
+            <li>Read minds</li>
+            <li>Control actions</li>
+            <li>Erase memory</li>
+            <li>Tell the future</li>
+        </ul>
+        <h2>Objective:</h2>
+        <p>The world has discovered your powers. Use them to create an empire and colonize all countries.</p>
+        <button id="read-mind">Read Mind</button>
+        <button id="control-actions">Control Actions</button>
+        <button id="erase-memory">Erase Memory</button>
+        <button id="tell-future">Tell the Future</button>
     </div>
+    
+    <script>
+        // Your JavaScript code to make the game interactive goes here
+    </script>
 </body>
 </html>
